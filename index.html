@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POUR OVER PARADISE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        #totalBill {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+        #billDisplay {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://source.boomplaymusic.com/group10/M00/07/30/10c50c6ecfcd4396a6bbeefd87753069H1500W1500_464_464.jpg">
+    <h2>POUR OVER PARADISE</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Burger</td>
+                <td>59.00</td>
+                <td><input type="number" id="burgerQty" value="0"></td>
+            </tr>
+            <tr>
+                <td>Pizza</td>
+                <td>79.00</td>
+                <td><input type="number" id="pizzaQty" value="0"></td>
+            </tr>
+            <tr>
+                <td>French Fries</td>
+                <td>59.00</td>
+                <td><input type="number" id="friesQty" value="0"></td>
+            </tr>
+            <tr>
+                <td>Mojitos</td>
+                <td>79.00</td>
+                <td><input type="number" id="mojitoQty" value="0"></td>
+            </tr>
+            <tr>
+                <td>Nuggets</td>
+                <td>59.00</td>
+                <td><input type="number" id="nuggetsQty" value="0"></td>
+            </tr>
+            <tr>
+                <td>Sandwich</td>
+                <td>49.00</td>
+                <td><input type="number" id="sandwichQty" value="0"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="totalBill" onclick="calculateTotal()">Total Bill</button>
+    <div id="billDisplay"></div>
+</div>
+
+<script>
+    function calculateTotal() {
+        // Prices
+        let burgerPrice = 59;
+        let pizzaPrice = 79;
+        let friesPrice = 59;
+        let mojitoPrice = 79;
+        let nuggetsPrice = 59;
+        let sandwichPrice = 49;
+
+        // Quantities
+        let burgerQty = document.getElementById('burgerQty').value;
+        let pizzaQty = document.getElementById('pizzaQty').value;
+        let friesQty = document.getElementById('friesQty').value;
+        let mojitoQty = document.getElementById('mojitoQty').value;
+        let nuggetsQty = document.getElementById('nuggetsQty').value;
+        let sandwichQty = document.getElementById('sandwichQty').value;
+
+        // Calculate total for each item
+        let burgerTotal = burgerQty * burgerPrice;
+        let pizzaTotal = pizzaQty * pizzaPrice;
+        let friesTotal = friesQty * friesPrice;
+        let mojitoTotal = mojitoQty * mojitoPrice;
+        let nuggetsTotal = nuggetsQty * nuggetsPrice;
+        let sandwichTotal = sandwichQty * sandwichPrice;
+
+        // Calculate grand total
+        let grandTotal = burgerTotal + pizzaTotal + friesTotal + mojitoTotal + nuggetsTotal + sandwichTotal;
+
+        // Display the total bill
+        document.getElementById('billDisplay').innerText = "Total Bill: " + grandTotal.toFixed(2) + " rs";
+    }
+</script>
+
+</body>
+</html>
